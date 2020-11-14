@@ -13,16 +13,6 @@ struct NumAndSumDivisors
 
 };
 
-bool operator==(const NumAndSumDivisors &a, const NumAndSumDivisors &b)
-{
-    if(a.num == b.num && a.sumOfDivisors == b.sumOfDivisors)
-    {
-        return true;
-    }
-
-    return false;
-}
-
 
 class Divisors
 {

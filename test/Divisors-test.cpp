@@ -6,6 +6,9 @@
 
 using namespace testing;
 
+// class TestFindingDivisors : public testing::Tes
+
+
 TEST(TestFindingDivisoris, DivisorsOf12)
 {
     Divisors divisors;
@@ -74,7 +77,16 @@ TEST(TestGetNumSumsUntil, NumsSumsUntil8)
     numSum.sumOfDivisors = 7;
     exp_numSums.push_back(numSum);
 
-    ASSERT_THAT(exp_numSums,Eq(divisors.getNumSumsUntil(8)));
+    std::deque<NumAndSumDivisors> act_numSums = divisors.getNumSumsUntil(8);
+
+    ASSERT_THAT(exp_numSums.size(),Eq(act_numSums.size()));
+
+    for(size_t i = 0; i < exp_numSums.size(); ++i)
+    {
+        EXPECT_THAT(exp_numSums.at(i).num, Eq(act_numSums.at(i).num));
+        EXPECT_THAT(exp_numSums.at(i).sumOfDivisors, Eq(act_numSums.at(i).sumOfDivisors));
+    }
+
 
 }
 

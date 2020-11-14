@@ -7,13 +7,12 @@
 class AbundantNumbers
 {
 private:
-    Divisors divs;
-
     std::deque<int> abundantNums;
 
 public:
     std::deque<int> getAbundandNums(const int maxNum )
     {
+        Divisors divs;
         std::deque<NumAndSumDivisors> sumDivs = divs.getNumSumsUntil(maxNum);
 
         for(const auto sumDiv : sumDivs)

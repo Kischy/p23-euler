@@ -17,6 +17,7 @@ include_directories(googletest/googlemock/include) # this is so we can #include 
 add_executable(p23-euler-test 
     Divisors-test.cpp
     AbundantNumbers-test.cpp
+    NonTwoAbundantSumNumber-test.cpp
 ) # add this executable
 
 target_link_libraries(p23-euler-test PRIVATE gtest) # link google test to this executable

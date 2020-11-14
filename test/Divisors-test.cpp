@@ -6,42 +6,41 @@
 
 using namespace testing;
 
-// class TestFindingDivisors : public testing::Tes
+ class TestDivisors : public Test
+ {
+     public:
+         Divisors divisors;
 
+ };
 
-TEST(TestFindingDivisoris, DivisorsOf12)
+TEST_F(TestDivisors, DivisorsOf12)
 {
-    Divisors divisors;
     std::deque<int> divsOf12 = {1,2,3,4,6};
 
     ASSERT_THAT(divsOf12,Eq(divisors.getDivisors(12)));
 }
 
-TEST(TestFindingDivisoris, DivisorsOf28 )
+TEST_F(TestDivisors, DivisorsOf28 )
 {
-    Divisors divisors;
     std::deque<int> divsOf28 = {1,2,4,7,14};
 
     ASSERT_THAT(divsOf28,Eq(divisors.getDivisors(28)));
 }
 
-TEST(TestFindingDivisoris, DivisorsOf129 )
+TEST_F(TestDivisors, DivisorsOf129 )
 {
-    Divisors divisors;
     std::deque<int> divsOf129 = {1, 3, 43};
 
     ASSERT_THAT(divsOf129,Eq(divisors.getDivisors(129)));
 }
 
-TEST(TestSumOfDivisors, SumOfDivisorOf129 )
+TEST_F(TestDivisors, SumOfDivisorOf129 )
 {
-    Divisors divisors;
     ASSERT_THAT(47,Eq(divisors.getSumOfDivisors(129)));
 }
 
-TEST(TestGetNumSumsUntil, NumsSumsUntil8)
+TEST_F(TestDivisors, NumsSumsUntil8)
 {
-    Divisors divisors;
 
     std::deque<NumAndSumDivisors> exp_numSums;
     NumAndSumDivisors numSum;
